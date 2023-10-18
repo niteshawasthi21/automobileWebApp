@@ -1,0 +1,13 @@
+.bg-light {
+  background-color: #b0c1d1!important;
+  border-radius: 1em;
+
+}
+
+input{
+  border: 1px solid black;
+    height: 3.1em;
+}
+form{
+  margin-top: 5em;
+}

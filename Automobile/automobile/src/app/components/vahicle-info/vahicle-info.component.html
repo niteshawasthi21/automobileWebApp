@@ -1,0 +1,90 @@
+<section style="background-color: #eee;" class="w-100">
+  <div class="container py-5 col-12">
+    <div class="row justify-content-center ">
+      <div class="col-md-12 col-lg-6 col-xl-8">
+        <div class="card" style="border-radius: 15px;">
+          <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
+            <img src="{{viewData?.image}}" style="border-top-left-radius: 15px; border-top-right-radius: 15px;"
+              class="img-fluid w-100" alt="Laptop" />
+            <a href="#!">
+              <div class="mask"></div>
+            </a>
+          </div>
+          <div class="card-body pb-0">
+            <div class="d-flex justify-content-between">
+              <div>
+                <p><a class="text-dark">
+                    <h4>{{viewData?.name}}</h4>
+                  </a></p>
+                <p class="small text-muted"></p>
+                <h6>{{viewData?.details}}</h6>
+              </div>
+            </div>
+          </div>
+          <hr class="my-0" />
+          <div class="card-body pb-0">
+            <div class="d-flex justify-content-between">
+              <p class="small text-muted"><strong>Componay:</strong> </p>
+              <p class="text-dark"><strong>{{viewData?.company_name}}</strong></p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p><a class="text-dark"><strong> Price:</strong></a></p>
+              <p class="text-dark"><strong>{{viewData?.price | currency}}</strong></p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="small text-muted"><strong>Type:</strong> </p>
+              <p class="text-dark"><strong>{{viewData?.type}}</strong></p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="small text-muted"><strong>Horse Power:</strong> </p>
+              <p class="text-dark"><strong>{{viewData?.horsepower}} hp</strong></p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="small text-muted"><strong>Speed:</strong> </p>
+              <p class="text-dark"><strong>{{viewData?.speed}} Km/h</strong></p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="small text-muted"><strong>Year:</strong> </p>
+              <p class="text-dark"><strong>{{viewData?.year}}</strong></p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="small text-muted"><strong>Model:</strong> </p>
+              <p class="text-dark"><strong>{{viewData?.model}}</strong></p>
+            </div>
+          </div>
+          <hr class="my-0" />
+
+          <div class="card text-white bg-dark mt-2 mb-1 col-9 mx-auto">
+            <div class="card-header"><strong>Insurance Company</strong></div>
+            <div class="card-body">
+              <h5 class="card-title"><strong>Name:</strong> {{insuranceData?.name}}</h5>
+              <strong class="card-text"><strong>Insurance Price:</strong> {{insuranceData?.insurance_price
+                | currency}}</strong>
+              <h5><strong>Discount: {{insuranceData?.discount| currency}}</strong></h5>
+            </div>
+            <ul>
+              <h5><strong>Contact Details:</strong></h5>
+              <ol>
+                <h6><strong>Website:</strong> {{insuranceData?.contact?.website}}</h6>
+              </ol>
+              <ol>
+                <h6><strong>Address:</strong> {{insuranceData?.contact?.address}}</h6>
+              </ol>
+              <ol>
+                <h6><strong>Phoine:</strong>{{insuranceData?.contact?.phone}}</h6>
+              </ol> 
+            </ul>
+            <div class="d-flex flex-row-reverse pb-2 mb-1  ">
+              <button class="btn btn-info text-light fw-bold " (click)="sendDetails( )">Send personal detals</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
+              <a routerLink="/dashboard" class="btn btn-primary text-dark fw-bold">Back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

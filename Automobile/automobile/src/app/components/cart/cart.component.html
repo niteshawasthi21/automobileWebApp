@@ -1,0 +1,59 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+<ng-container *ngIf="cartData?.length != 0">
+    <div class="container">
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>Vehicle Image</th>
+                            <th>Vehicle Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Type</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of cartData; let i = index" #info>
+                            <td>{{ i + 1 }}</td>
+                            <td>
+                                <img style="width: 120px" src="{{ item.image }}" alt="" />
+                            </td>
+                            <td style="width: 25%">{{ item.name }}</td>
+                            <td style="width: 25%">{{ item.details }}</td>
+                            <th style="width: 12%">{{ item.price }}</th>
+                            <td style="width: 12%">{{ item.type }}</td>
+                            <td style="width: 12%"><i class="btn btn-danger fas fa-trash-alt" (click)="deleteItem(item)"></i></td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="cartData?.length == 0">
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">My Cart</h5>
+        </div>
+        <div class="center">
+            <img src="https://image.shutterstock.com/image-vector/empty-cart-illustration-concept-flat-600w-2064206714.jpg"
+                alt="" />
+            <h4>Your cart is empty!</h4>
+            <h6>Add item to it now</h6>
+            <button routerLink="/dashboard" class="btn btn-primary">Shop Now</button>
+        </div>
+    </div>
+    <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+      <p style="font-size: 20px; color: white">Please Wait...</p>
+    </ngx-spinner>
+</ng-container>
+

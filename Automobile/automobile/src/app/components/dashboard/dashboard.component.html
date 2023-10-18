@@ -1,0 +1,91 @@
+<div class="container my-4">
+  <div class="align-items-center" style="margin-left: 10rem
+  ;">
+    <a class="btn btn-primary me-2" target="_blank" role="button">Tata</a>
+    <a class="btn btn-danger me-2" target="_blank" role="button">Tesla</a>
+    <a class="btn btn-success me-2" target="_blank" role="button">BMW</a>
+    <a class="btn btn-primary me-2" target="_blank" role="button">Ford<i class="fa fa-github ms-2"></i></a>
+  </div>
+
+  <hr class="mb-5" />
+
+  <h2 class="my-5 h2 logoRealme">{{"AutoMobile" | translate}}</h2>
+   <div class="bg-info mb-4 h-5">
+    <label for="language"><strong>{{"Select Language:" | translate}}</strong></label>
+    <select (change)="changeLanguage($event)" id="language" class="ml-2">
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+    </select>
+   </div>
+ 
+
+  <div class="container">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner images">
+        <div class="carousel-item active">
+          <img src="https://wallpapercave.com/dwp2x/wp8825440.jpg" class="d-block w-100 mainImage" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /><br />
+  <div class="d-flex">
+    <h1>{{"Products" | translate}}</h1>
+    <div class=" mt-2  w-100">
+  
+      <input class="form-control w-50 border border-dark float-right" type="text" name="search" [(ngModel)]="searchTerm"
+        placeholder="Search based on type and year...">
+    </div>
+  </div>
+  <main>
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div *ngIf="filtered()?.length === 0" class="styleMessges">No record found</div>
+        <div class="col-md-8 col-lg-6 col-xl-4" *ngFor="let item of filtered() | filter: searchTerm">
+          <div class="card text-black img-hover-zoom">
+            <i class="fab fa-product-hunt fa-lg pt-3 pb-1 px-3"></i>
+            <img src="{{item.image}}" class="card-img-top" alt="Apple Computer" />
+            <div class="card-body">
+              <div class="text-center">
+                <h5 class="card-title">{{
+                          item.name | translate
+                        }}</h5>
+              </div>
+              <div>
+                <div class="d-flex justify-content-between">
+                  <span>{{"Category" | translate}}</span><span>{{ item.model }}</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span>{{"Price" | translate}}</span><span>{{ item.price }}</span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                  <span>{{"Type" | translate}}</span><span>{{ item.type | translate }}</span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                  <span>{{"Year" | translate}}</span><span>{{ item.year | translate }}</span>
+                </div>
+                <div class="ratings">
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <button (click)="addtocart(item)" class="btn btn-danger">{{"Add To Cart" | translate}}</button>
+                  <button [routerLink]="['/dashboard' , item.id]"
+                    class=" btn-info border border-radius ">{{"View" | translate}}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+      <p style="font-size: 20px; color: white">Please Wait...</p>
+    </ngx-spinner>
+  </main>
+</div>

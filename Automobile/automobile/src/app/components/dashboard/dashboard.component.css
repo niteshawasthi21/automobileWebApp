@@ -1,0 +1,155 @@
+.logoRealme {
+  /* background-color: #7ddede; */
+  /* width: 7vw; */
+  text-align: center;
+  font-weight: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.paraRealme{
+  text-align: center;
+}
+
+.addToCartDiv{
+  display: flex;
+  justify-content: space-around;
+}
+.mainImage{
+  height: 75vh;
+}
+
+.searchBox{
+  width: auto;
+  height: 2vh;
+}
+
+.styleMessges{
+  font-size: large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+
+}
+
+
+.addtocart{
+  width: auto;
+  background-color: #18385D;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  height: 4.5vh;
+  text-decoration: none;
+  padding-left: 5px;
+}
+.btn{
+margin-left: 10rem;
+}
+
+.ratings{
+  margin-right:10px;
+}
+
+.ratings i{
+  
+  color:#cecece;
+  font-size:15px;
+}
+
+.rating-color{
+  color:#fbc634 !important;
+}
+
+.addtocart:hover{
+  width: 100%;
+  background-color: #2CF19B;
+  color: black;
+  font-weight: bold;
+  font-size: 20px
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+font-family: 'Montserrat', sans-serif;
+background-color: #eee;
+color: rgb(237, 227, 227);
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center; 
+}
+
+.marquee {
+width: auto;
+height: 20vh;
+background-color: none;
+color: rgb(255, 255, 255);
+overflow: hidden;
+}
+
+.marquee-content {
+  list-style: none;
+  height: 100%;
+  display:flex;
+  animation: scrolling 20s linear infinite;
+}
+ 
+
+.marquee-content li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22vw;
+  flex-shrink: 0;
+  font-size: 5rem;
+  white-space: nowrap;
+}
+.marquee .marquee-content li img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: none;
+  border-color: none;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/* .col .card img {
+  width: auto;
+  height: 200px;
+} */
+
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform 1.5s ease;
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(0.7);
+}
+.card img{
+  width: 300px;
+  height: 200px;
+  margin-left: 3rem;
+}
+.card{
+  margin-top: 3rem;
+}
+
+.seletlang{
+   font-weight: 900;
+}
